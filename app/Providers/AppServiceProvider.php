@@ -3,6 +3,7 @@
 namespace App\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -19,13 +20,6 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        Route::pattern('name', '[a-zA-Z0-9_-]+');
     }
-
-    public function boot()
-{
-    parent::boot();
-
-    \Illuminate\Support\Facades\Route::pattern('name', '[a-zA-Z0-9_-]+');
-}
 }
