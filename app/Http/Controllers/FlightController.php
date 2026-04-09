@@ -9,10 +9,10 @@ class FlightController extends Controller
 {
      public function show()
     {
-        $flight = Flight::find(1);
-        $flight -> name = 'New Flight Name';
-        $flight->save();
+        $flights = Flight::all();
         
-        dd($flight);
+        foreach ($flights as $flight) {
+            echo $flight->name;
+        }
     }
 }
