@@ -6,10 +6,5 @@ use Illuminate\Database\Eloquent\Model;
 
 class Attraction extends Model
 {
-    protected $fillable = ['name', 'description', 'city_id'];
-
-    public function city()
-    {
-        return $this->belongsTo(City::class);
-    }
+    //
 }
