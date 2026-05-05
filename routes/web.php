@@ -8,9 +8,10 @@ use App\Http\Controllers\GuestBookController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\AdController;
 use App\Http\Controllers\LocationController;
+use App\Http\Controllers\TestController;
+
 
 Route::get('/show', [FlightController::class, 'show']);
-
 Route::get('/post/all/{order?}', [PostsController::class, 'getAll']);
 Route::get('/post/new', [PostsController::class, 'newPost']);
 Route::post('/post/new', [PostsController::class, 'newPost']);
@@ -21,11 +22,7 @@ Route::post('/guestbook', [GuestBookController::class, 'store'])->name('guestboo
 Route::get('/categoriesIndex', [CategoryController::class, 'index'])->name('categories.index');
 Route::get('/categories/category', [CategoryController::class, 'show'])->name('categories.show');
 Route::post('/categories/category1/ads', [AdController::class, 'store'])->name('ads.store');
-// Роуты для стран
-Route::resource('countries', CountryController::class);
-
-// Роуты для городов
-Route::resource('cities', CityController::class);
-
-// Роуты для достопримечательностей
-Route::resource('attractions', AttractionController::class);
+// Route::get('/countries', CountryController::class);
+// Route::get('/cities', CityController::class);
+// Route::get('/attractions', AttractionController::class);
+Route::get('/test', [TestController::class, 'form']);
